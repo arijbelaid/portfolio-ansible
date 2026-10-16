@@ -1,0 +1,30 @@
+---
+- name: Installer Nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Déployer la configuration du vhost
+  template:
+    src: portfolio.conf.j2
+    dest: /etc/nginx/sites-available/portfolio.conf
+  notify: reload nginx
+
+- name: Activer le site
+  file:
+    src: /etc/nginx/sites-available/portfolio.conf
+    dest: /etc/nginx/sites-enabled/portfolio.conf
+    state: link
+  notify: reload nginx
+
+- name: Désactiver le site par défaut
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: reload nginx
+
+- name: S'assurer que Nginx est démarré et activé
+  service:
+    name: nginx
+    state: started
+    enabled: yes

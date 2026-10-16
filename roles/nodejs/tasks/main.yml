@@ -1,0 +1,17 @@
+---
+- name: Installer Node.js depuis les dépôts Ubuntu
+  apt:
+    name: nodejs
+    state: present
+    update_cache: yes
+
+- name: Installer npm
+  apt:
+    name: npm
+    state: present
+
+- name: Installer PM2 globalement
+  npm:
+    name: pm2
+    global: yes
+    state: present

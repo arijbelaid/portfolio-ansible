@@ -1,0 +1,21 @@
+---
+- name: Mettre à jour le cache apt
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Installer les paquets de base
+  apt:
+    name:
+      - git
+      - curl
+      - build-essential
+      - python3-pip
+    state: present
+
+- name: Créer l'utilisateur deploy
+  user:
+    name: deploy
+    shell: /bin/bash
+    create_home: yes
+    state: present

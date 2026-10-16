@@ -1,0 +1,5 @@
+---
+- name: restart app
+  command: pm2 restart portfolio
+  args:
+    chdir: "{{ app_dir }}"

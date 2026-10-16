@@ -1,0 +1,5 @@
+app_repo: "git@github.com:arijbelaid/deploy_Portfolio.git"
+app_version: "main"
+app_dir: "/opt/portfolio"
+app_port: 3000
+server_name: "portfolio.local"

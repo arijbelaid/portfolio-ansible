@@ -1,0 +1,9 @@
+---
+- name: Déployer le portfolio Next.js
+  hosts: webservers
+  become: yes
+  roles:
+    - common
+    - nodejs
+    - app
+    - nginx

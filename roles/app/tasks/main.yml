@@ -1,0 +1,38 @@
+---
+- name: Cloner ou mettre à jour le dépôt de l'application
+  git:
+    repo: "{{ app_repo }}"
+    dest: "{{ app_dir }}"
+    version: "{{ app_version }}"
+    force: yes
+  notify: restart app
+
+- name: Installer les dépendances npm
+  command: npm ci
+  args:
+    chdir: "{{ app_dir }}"
+  changed_when: false
+
+- name: Construire l'application Next.js
+  command: npm run build
+  args:
+    chdir: "{{ app_dir }}"
+  changed_when: false
+
+- name: Vérifier si l'application tourne avec PM2
+  shell: pm2 list | grep -q "portfolio"
+  register: pm2_status
+  changed_when: false
+  failed_when: false
+
+- name: Démarrer l'application avec PM2 (si non démarrée)
+  command: pm2 start npm --name "portfolio" -- start
+  args:
+    chdir: "{{ app_dir }}"
+  when: pm2_status.rc != 0
+
+- name: Sauvegarder la liste des processus PM2
+  command: pm2 save
+  args:
+    chdir: "{{ app_dir }}"
+  changed_when: false
