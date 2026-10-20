@@ -1,4 +1,10 @@
 # 🤖 TP1 : Déploiement d'un Portfolio Next.js avec Ansible et Semaphore UI
+![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=flat-square&logo=ansible&logoColor=white)
+![Semaphore](https://img.shields.io/badge/Semaphore-1A1A1A?style=flat-square&logo=semaphore&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
+
+---
 
 📄 **[Télécharger le rapport complet du TP1 (PDF)](./TP1_partie1.pdf)**
 
