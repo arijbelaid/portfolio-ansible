@@ -84,13 +84,13 @@ Lancement du conteneur Docker de Semaphore.
 ### Ajout du dépôt Git (`portfolio-repo`) :
 ![Dépôt Git](captures/17-semaphore-repo.png)
 
-Configuration de l'inventaire (`prod-server`) :
+### Configuration de l'inventaire (`prod-server`) :
 ![Inventaire Semaphore](captures/18-semaphore-inventory.png)
 
-Configuration du groupe de variables (`portfolio-vars`) :
+### Configuration du groupe de variables (`portfolio-vars`) :
 ![Variables Semaphore](captures/19-semaphore-vars.png)
 
-Création du modèle de tâche (`Deploy Portfolio`) :
+### Création du modèle de tâche (`Deploy Portfolio`) :
 ![Task Template](captures/20-semaphore-template.png)
 
 lancement :
