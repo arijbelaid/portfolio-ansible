@@ -21,7 +21,7 @@ Ce dépôt contient l'Infrastructure as Code (IaC) pour automatiser le déploiem
 ![Création de la structure](captures/02-structure-projet.png)
 
 ### Configuration d'Ansible (`ansible.cfg`)
-![Configuration d'Ansible](./captures/03-ansible-cfg.png)
+![Configuration d'Ansible](captures/03-ansible-cfg.png)
 
 ### Configuration de l'inventaire (`hosts.ini`)
 ![Inventaire](captures/04-inventory-hosts.png)
